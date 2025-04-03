@@ -41,6 +41,7 @@
     <orderEntry type="library" scope="PROVIDED" name="activesupport (v8.0.2, asdf: 3.4.2) [gem]" level="application" />
     <orderEntry type="library" scope="PROVIDED" name="ast (v2.4.3, asdf: 3.4.2) [gem]" level="application" />
     <orderEntry type="library" scope="PROVIDED" name="base64 (v0.2.0, asdf: 3.4.2) [gem]" level="application" />
+    <orderEntry type="library" scope="PROVIDED" name="bcrypt (v3.1.20, asdf: 3.4.2) [gem]" level="application" />
     <orderEntry type="library" scope="PROVIDED" name="bcrypt_pbkdf (v1.1.1, asdf: 3.4.2) [gem]" level="application" />
     <orderEntry type="library" scope="PROVIDED" name="benchmark (v0.4.0, asdf: 3.4.2) [gem]" level="application" />
     <orderEntry type="library" scope="PROVIDED" name="bigdecimal (v3.1.9, asdf: 3.4.2) [gem]" level="application" />
@@ -64,6 +65,7 @@
     <orderEntry type="library" scope="PROVIDED" name="io-console (v0.8.0, asdf: 3.4.2) [gem]" level="application" />
     <orderEntry type="library" scope="PROVIDED" name="irb (v1.15.1, asdf: 3.4.2) [gem]" level="application" />
     <orderEntry type="library" scope="PROVIDED" name="json (v2.10.2, asdf: 3.4.2) [gem]" level="application" />
+    <orderEntry type="library" scope="PROVIDED" name="jwt (v2.10.1, asdf: 3.4.2) [gem]" level="application" />
     <orderEntry type="library" scope="PROVIDED" name="kamal (v2.5.3, asdf: 3.4.2) [gem]" level="application" />
     <orderEntry type="library" scope="PROVIDED" name="language_server-protocol (v3.17.0.4, asdf: 3.4.2) [gem]" level="application" />
     <orderEntry type="library" scope="PROVIDED" name="lint_roller (v1.1.0, asdf: 3.4.2) [gem]" level="application" />
@@ -95,6 +97,8 @@
     <orderEntry type="library" scope="PROVIDED" name="raabro (v1.4.0, asdf: 3.4.2) [gem]" level="application" />
     <orderEntry type="library" scope="PROVIDED" name="racc (v1.8.1, asdf: 3.4.2) [gem]" level="application" />
     <orderEntry type="library" scope="PROVIDED" name="rack (v3.1.12, asdf: 3.4.2) [gem]" level="application" />
+    <orderEntry type="library" scope="PROVIDED" name="rack-attack (v6.7.0, asdf: 3.4.2) [gem]" level="application" />
+    <orderEntry type="library" scope="PROVIDED" name="rack-cors (v2.0.2, asdf: 3.4.2) [gem]" level="application" />
     <orderEntry type="library" scope="PROVIDED" name="rack-session (v2.1.0, asdf: 3.4.2) [gem]" level="application" />
     <orderEntry type="library" scope="PROVIDED" name="rack-test (v2.2.0, asdf: 3.4.2) [gem]" level="application" />
     <orderEntry type="library" scope="PROVIDED" name="rackup (v2.2.1, asdf: 3.4.2) [gem]" level="application" />
@@ -113,6 +117,7 @@
     <orderEntry type="library" scope="PROVIDED" name="rubocop-rails (v2.31.0, asdf: 3.4.2) [gem]" level="application" />
     <orderEntry type="library" scope="PROVIDED" name="rubocop-rails-omakase (v1.1.0, asdf: 3.4.2) [gem]" level="application" />
     <orderEntry type="library" scope="PROVIDED" name="ruby-progressbar (v1.13.0, asdf: 3.4.2) [gem]" level="application" />
+    <orderEntry type="library" scope="PROVIDED" name="secure_headers (v7.1.0, asdf: 3.4.2) [gem]" level="application" />
     <orderEntry type="library" scope="PROVIDED" name="securerandom (v0.4.1, asdf: 3.4.2) [gem]" level="application" />
     <orderEntry type="library" scope="PROVIDED" name="solid_cable (v3.0.7, asdf: 3.4.2) [gem]" level="application" />
     <orderEntry type="library" scope="PROVIDED" name="solid_cache (v1.0.7, asdf: 3.4.2) [gem]" level="application" />
@@ -127,6 +132,7 @@
     <orderEntry type="library" scope="PROVIDED" name="unicode-emoji (v4.0.4, asdf: 3.4.2) [gem]" level="application" />
     <orderEntry type="library" scope="PROVIDED" name="uri (v1.0.3, asdf: 3.4.2) [gem]" level="application" />
     <orderEntry type="library" scope="PROVIDED" name="useragent (v0.16.11, asdf: 3.4.2) [gem]" level="application" />
+    <orderEntry type="library" scope="PROVIDED" name="uuidtools (v3.0.0, asdf: 3.4.2) [gem]" level="application" />
     <orderEntry type="library" scope="PROVIDED" name="websocket-driver (v0.7.7, asdf: 3.4.2) [gem]" level="application" />
     <orderEntry type="library" scope="PROVIDED" name="websocket-extensions (v0.1.5, asdf: 3.4.2) [gem]" level="application" />
     <orderEntry type="library" scope="PROVIDED" name="zeitwerk (v2.7.2, asdf: 3.4.2) [gem]" level="application" />
@@ -485,6 +491,11 @@
           <RakeTaskImpl id="log">
             <subtasks>
               <RakeTaskImpl description="Truncate all/specified *.log files in log/ to zero bytes (specify which logs with LOGS=test,development)" fullCommand="log:clear" id="clear" />
+            </subtasks>
+          </RakeTaskImpl>
+          <RakeTaskImpl id="secure_headers">
+            <subtasks>
+              <RakeTaskImpl description="Generate config/secure_headers_generated_hashes.yml" fullCommand="secure_headers:generate_hashes" id="generate_hashes" />
             </subtasks>
           </RakeTaskImpl>
           <RakeTaskImpl id="solid_cable">
