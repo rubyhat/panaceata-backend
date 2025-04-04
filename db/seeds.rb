@@ -12,5 +12,5 @@ User.create!(
   email: "admin@panaceata.test",
   password: "password123",
   password_confirmation: "password123",
-  role: "superadmin"
+  role: 0
 )
